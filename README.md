@@ -4,7 +4,7 @@ klems.motd
 
 A role that allows you to customize and add colors to your MOTD, depending of your environement (dev/staging/prod)
 
-![dev]()
+![dev](https://image.ibb.co/hNrTob/demo_new_dev.png)
 ![staging]()
 ![prod]()
 
