@@ -10,7 +10,7 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     git \
  && rm -rf /var/lib/apt/lists/*
 
-RUN wget https://bootstrap.pypa.io/get-pip.py
+RUN wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
 
 RUN python get-pip.py
 
