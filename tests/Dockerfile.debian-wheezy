@@ -6,6 +6,7 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     libffi-dev \
     libssl-dev \
     python-dev \
+    wget \
     git \
  && rm -rf /var/lib/apt/lists/*
 
