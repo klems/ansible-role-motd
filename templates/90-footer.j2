@@ -1,0 +1,6 @@
+#!/bin/bash
+
+uptime_nfo=$(uptime | awk '{print $2,$3,$4}' | sed 's/,//g')
+
+echo -e "UPTIME.:\033[1;{{ bash_color_prompt }}m $uptime_nfo \033[0m"
+echo -e "+-------------------------------------------------------+"

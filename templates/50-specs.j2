@@ -1,0 +1,18 @@
+#!/bin/bash
+
+cpu_model=$(cat /proc/cpuinfo | grep 'model name' | uniq | awk -F':' '{print $2}' | sed 's/^.//')
+cpu_cores=$(lscpu | grep "^CPU(s)" |awk '{print $2}')
+cpu_freq=$(lscpu | grep MHz | sort | head -1 | awk -F ':' '{print $2}' | sed 's/ //g')
+mem_total=$(free -m |grep Mem |awk '{print $2}')
+hdd_list=$(df |grep /dev/ | grep -v tmpfs | awk '{print $1}' | sed 's/\/dev\///g')
+
+echo -e "CPU....:\033[1;{{ bash_color_prompt }}m $cpu_model \033[0m"
+echo -e "CORES..:\033[1;{{ bash_color_prompt }}m $cpu_cores \033[0m"
+echo -e "FREQ...:\033[1;{{ bash_color_prompt }}m $cpu_freq Mhz\033[0m"
+echo -e "MEM....:\033[1;{{ bash_color_prompt }}m $mem_total Mo \033[0m"
+for disk in $hdd_list
+do
+  mounted_on=$(df /dev/$disk | grep -v Filesystem | awk '{print $NF}')
+  used_space=$(df /dev/$disk | grep -v Filesystem | awk '{print $5}')
+  echo -e "DISK...: \033[1;{{ bash_color_prompt }}m$disk\033[0m | \033[1;{{ bash_color_prompt }}m$mounted_on\033[0m | \033[1;{{ bash_color_prompt }}m$used_space\033[0m"
+done

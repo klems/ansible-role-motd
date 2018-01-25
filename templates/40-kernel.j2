@@ -1,0 +1,7 @@
+#!/bin/bash
+
+kernel=$(uname -r)
+debian=$(cat /etc/debian_version)
+
+echo -e "KERNEL.:\033[1;{{ bash_color_prompt }}m $kernel \033[0m"
+echo -e "DEBIAN.:\033[1;{{ bash_color_prompt }}m $debian \033[0m"

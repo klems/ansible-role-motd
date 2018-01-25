@@ -1,0 +1,6 @@
+#!/bin/bash
+
+host=$(figlet -f /usr/share/figlet/{{ figlet_font }} $HOSTNAME -w 150)
+
+echo -e "\033[1;{{ bash_color_prompt }}m$host\033[0m"
+echo -e "+-------------------------------------------------------+"
