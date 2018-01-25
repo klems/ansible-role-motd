@@ -18,8 +18,8 @@ galaxy_info:
     - stretch
   - name: Ubuntu
     versions:
-    - xenial
     - trusty
+    - xenial
 
   galaxy_tags:
     - linux
