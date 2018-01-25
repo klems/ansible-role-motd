@@ -41,5 +41,6 @@
   with_items:
     - /etc/motd
     - /etc/update-motd.d/10-help-text
+    - /etc/update-motd.d/50-landscape-sysinfo
     - /etc/update-motd.d/51-cloudguest
   become: yes

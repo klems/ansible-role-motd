@@ -43,7 +43,7 @@
     - /etc/update-motd.d/10-uname
   become: yes
 
-- name: "[DEBIAN] (wheezy/jessie) : editing pam.d option ..."
+- name: "[DEBIAN] [wheezy/jessie] : editing pam.d option ..."
   replace:
     dest: /etc/pam.d/sshd
     regexp: 'motd.dynamic'

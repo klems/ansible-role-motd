@@ -12,6 +12,8 @@ env:
   - distribution: debian
     version: stretch
   - distribution: ubuntu
+    version: trusty
+  - distribution: ubuntu
     version: xenial
 
 before_install:
