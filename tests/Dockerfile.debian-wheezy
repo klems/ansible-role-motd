@@ -14,6 +14,8 @@ RUN wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
 
 RUN python get-pip.py
 
+RUN pip install --upgrade setuptools && pip install ansible
+
 RUN mkdir -p /etc/ansible && echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 
 RUN mkdir -p /etc/pam.d && echo "motd=/run/motd.dynamic" > /etc/pam.d/sshd
