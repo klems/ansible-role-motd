@@ -10,6 +10,9 @@ galaxy_info:
     - wheezy
     - jessie
     - stretch
+  - name: Ubuntu
+    versions:
+    - xenial
   galaxy_tags:
     - linux
     - system

@@ -2,3 +2,6 @@
 
 - import_tasks: tasks/debian.yml
   when: ansible_distribution == "Debian"
+
+- import_tasks: tasks/ubuntu.yml
+  when: ansible_distribution == "Ubuntu"

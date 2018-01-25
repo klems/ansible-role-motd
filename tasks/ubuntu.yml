@@ -1,0 +1,45 @@
+---
+
+- name: "[UBUNTU] installing figlet ..."
+  apt:
+    name: figlet
+    update_cache: yes
+    cache_valid_time: 3600
+  become: yes
+
+- name: "[UBUNTU] downloading extra fonts for figlet ..."
+  get_url:
+    url: http://www.figlet.org/fonts/{{ item }}
+    dest: /usr/share/figlet/{{ item }}
+    mode: 0440
+  with_items: "{{ figlet_extra_fonts }}"
+  become: yes
+
+- name: "[UBUNTU] creating custom motd.d folder ..."
+  file:
+    dest: /etc/update-motd.d
+    state: directory
+  become: yes
+
+- name: "[UBNUTU] sending motd.d scripts ..."
+  template:
+    src: "{{ item }}.j2"
+    dest: "/etc/update-motd.d/{{ item }}"
+    mode: "0755"
+  with_items:
+    - 00-header
+    - 10-hostname
+    - 40-kernel
+    - 50-specs
+    - 90-footer
+  become: yes
+
+- name: "[UBUNTU] deleting basic MOTD message ..."
+  file:
+    dest: "{{ item }}"
+    state: absent
+  with_items:
+    - /etc/motd
+    - /etc/update-motd.d/10-help-text
+    - /etc/update-motd.d/51-cloudguest
+  become: yes
