@@ -1,9 +1,15 @@
 galaxy_info:
+
   author: klems
+
   description: A role to customize the MOTD on various linux distributions
+
   company: Neonoïa
+
   license: BSD
+
   min_ansible_version: 2.4
+
   platforms:
   - name: Debian
     versions:
@@ -13,8 +19,10 @@ galaxy_info:
   - name: Ubuntu
     versions:
     - xenial
+
   galaxy_tags:
     - linux
     - system
     - MOTD
+
 dependencies: []

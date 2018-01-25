@@ -11,6 +11,8 @@ env:
     version: wheezy
   - distribution: debian
     version: stretch
+  - distribution: ubuntu
+    version: xenial
 
 before_install:
   - 'sudo docker pull ${distribution}:${version}'
