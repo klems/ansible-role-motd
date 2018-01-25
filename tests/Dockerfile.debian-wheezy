@@ -12,6 +12,8 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
 
 RUN pip install -v ansible -i https://pypi.python.org/simple/
 
+RUN pip install --upgrade setuptools -i https://pypi.python.org/simple/
+
 RUN mkdir -p /etc/ansible && echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 
 RUN mkdir -p /etc/pam.d && echo "motd=/run/motd.dynamic" > /etc/pam.d/sshd
