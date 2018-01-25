@@ -2,10 +2,11 @@ klems.motd
 ------------
 [![Build Status](https://travis-ci.org/klems/ansible-role-motd.svg?branch=master)](https://travis-ci.org/klems/ansible-role-motd)
 
-A role that allows you to customize and add colors to your MOTD, depending of your environement (dev vs prod)
+A role that allows you to customize and add colors to your MOTD, depending of your environement (dev/staging/prod)
 
-![dev](img/demo-01.png)
-![prod](img/demo-02.png)
+![dev]()
+![staging]()
+![prod]()
 
 Requirements
 ------------
