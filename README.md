@@ -46,7 +46,7 @@ Example Playbook
 ```
 - hosts: servers
   roles:
-     - { role: klems.motd, bash_color_prompt: 32 }
+     - { role: klems.motd, bash_color_prompt: '32' }
 ```
 
 License
