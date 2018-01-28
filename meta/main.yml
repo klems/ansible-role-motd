@@ -25,5 +25,6 @@ galaxy_info:
     - linux
     - system
     - MOTD
+    - admin
 
 dependencies: []
